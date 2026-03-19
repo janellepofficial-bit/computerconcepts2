@@ -1,0 +1,113 @@
+<html>
+
+  <head>
+    <title>Janelle's Blog</title>
+
+    <style>
+      body {
+        background-image: url("https://media1.tenor.com/m/6cPgCv-Lcy8AAAAC/cute-ghost-gif-wallpaper.gif");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        font-family: Arial;
+      }
+
+      #chatBox {
+        border: 2px solid pink;
+        background-color: rgba(255,255,255,0.8);
+        padding: 10px;
+        height: 200px;
+        overflow-y: scroll;
+        border-radius: 10px;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <h1>Janelle's blog</h1>
+    <p>Welcome to a webpage all about me!</p>
+
+    <p>
+      <a href="https://www.youtube.com/watch?v=NGcUm3Uy5rQ" target="_blank">
+        Check out my favorite site!
+      </a>
+    </p>
+
+    <img src="https://media1.tenor.com/m/6lq72wlQfskAAAAC/bratz-dolls.gif" alt="Bratz dolls gif">
+
+    <p>Some of my interests include:</p>
+    <ul>
+      <li>karaoke</li>
+      <li>talking shop with the ladies</li>
+      <li>spending time with my cats</li>
+      <li>
+        <a href="https://open.spotify.com/artist/7FBcuc1gsnv6Y1nwFtNRCb" target="_blank">
+          listening to music
+        </a>
+      </li>
+    </ul>
+
+    <!-- Intro paragraph -->
+    <p>
+      Hey yall! Thanks for coming to my first ever blog spot! I've always dreamed of having a cute MySpace-style blog like in Sex and the City, so here’s my attempt at that with virtually no coding skills. On this page you can check out all my favorites including music, videos, and games as well as explore my digital fashion lookbook. Enjoy!
+    </p>
+
+    <!--  Clickable GIF icon links -->
+    <p style="text-align:center;">
+      <!-- First icon -->
+      <a href="https://www.azaleasdolls.com/" target="_blank">
+        <img src="https://i.pinimg.com/originals/1c/1b/be/1c1bbecfdebe44f4f7ced87c77b5b4c6.gif" 
+             alt="Azalea Dolls link" 
+             width="120"
+             style="border-radius:10px;">
+      </a>
+
+      <!-- Second icon (YouTube) -->
+      <a href="https://www.youtube.com/" target="_blank">
+        <img src="https://c.tenor.com/ZPWmnFMe6cgAAAAj/yeahh-uhm.gif" 
+             alt="YouTube link" 
+             width="120"
+             style="border-radius:10px; margin-left:10px;">
+      </a>
+
+      <!-- Third icon (Flipbook GIF) -->
+      <a href="https://www.flipsnack.com/F6CCBFD6AED/new-flipbook" target="_blank">
+        <img src="https://www.picgifs.com/graphics/c/clothing/graphics-clothing-300506.gif" 
+             alt="Flipbook link" 
+             width="90"
+             style="border-radius:10px; margin-left:10px;">
+      </a>
+    </p>
+
+    <!-- Chat Blog Section -->
+    <h2>Chat with me 💬</h2>
+
+    <div id="chatBox"></div>
+    <br>
+
+    <input type="text" id="userInput" placeholder="Write something..." style="width:70%;">
+    <button onclick="postMessage()">Post</button>
+
+    <script>
+      function postMessage() {
+        let input = document.getElementById("userInput");
+        let message = input.value;
+
+        if (message.trim() !== "") {
+          let chatBox = document.getElementById("chatBox");
+
+          let newMessage = document.createElement("p");
+          newMessage.textContent = message;
+
+          chatBox.appendChild(newMessage);
+
+          input.value = "";
+          chatBox.scrollTop = chatBox.scrollHeight;
+        }
+      }
+    </script>
+
+  </body>
+</html>
